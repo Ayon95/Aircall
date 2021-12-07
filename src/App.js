@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import styled from 'styled-components';
+import GlobalStyles from './style/GlobalStyles';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Router>
+			<GlobalStyles />
+			<div className="App">
+				<Container>
+					<h1>Aircall</h1>
+				</Container>
+			</div>
+		</Router>
+	);
 }
 
 export default App;
+
+const Container = styled.div`
+	width: 100%;
+	height: 100%;
+	max-width: 38rem;
+	margin: 0 auto;
+	background-color: #fff;
+	border-radius: 4px;
+`;
+
+const MainContent = styled.main``;
