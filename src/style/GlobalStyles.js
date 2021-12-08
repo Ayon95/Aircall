@@ -21,16 +21,21 @@ const GlobalStyles = createGlobalStyle`
         background-color: #171726;
     }
 
+    a {
+        text-decoration: none;
+        color: ${stylesConfig.colorDarkGrey};
+        font-weight: 600;
+    }
+
+    ul {
+        list-style: none;
+    }
+
     .App {
         padding: 2rem;
 	    height: 100vh;
     }
 
-    a {
-        text-decoration: none;
-        color: #525252;
-        font-weight: 600;
-    }
 
     .active-link {
         color: ${stylesConfig.colorPrimary};

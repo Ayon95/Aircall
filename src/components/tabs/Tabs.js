@@ -19,7 +19,7 @@ export default Tabs;
 
 const Container = styled.nav`
 	ul {
-		list-style: none;
+		margin-bottom: ${stylesConfig.baseMargin};
 		display: flex;
 		justify-content: space-between;
 	}

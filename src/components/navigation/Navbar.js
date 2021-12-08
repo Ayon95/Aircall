@@ -48,11 +48,10 @@ export default Navbar;
 
 const Nav = styled.nav`
 	padding: ${stylesConfig.basePadding};
-	background-color: ${stylesConfig.colorLightGrey};
+	border-top: solid ${stylesConfig.colorLightGrey};
 `;
 
 const Links = styled.ul`
-	list-style: none;
 	display: flex;
 	justify-content: space-between;
 `;

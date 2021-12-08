@@ -10,7 +10,7 @@ function Tab({ tab }) {
 			<LinkComponent
 				to={tab.path}
 				// className={tab.path === location.hash ? 'active-tab' : ''}
-				isActive={tab.path === location.hash}
+				$isActive={tab.path === location.hash}
 			>
 				{tab.text}
 			</LinkComponent>
@@ -23,8 +23,8 @@ export default Tab;
 const LinkComponent = styled(NavLink)`
 	padding-bottom: 1rem;
 	position: relative;
-	color: ${props => props.isActive && stylesConfig.colorPrimary};
-	font-weight: ${props => props.isActive && 'bold'};
+	color: ${props => props.$isActive && stylesConfig.colorPrimary};
+	font-weight: ${props => props.$isActive && 'bold'};
 
 	&::before {
 		content: '';
@@ -34,7 +34,7 @@ const LinkComponent = styled(NavLink)`
 		height: 4px;
 		border-radius: 1rem;
 		background-color: ${stylesConfig.colorPrimary};
-		transform: ${props => (props.isActive ? 'scaleX(1)' : 'scaleX(0)')};
+		transform: ${props => (props.$isActive ? 'scaleX(1)' : 'scaleX(0)')};
 		transition: transform 0.3s;
 		transform-origin: left;
 	}
