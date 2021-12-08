@@ -10,7 +10,7 @@ const links = [
 	{
 		text: 'Calls',
 		icon: BsFillTelephoneFill,
-		path: '/calls',
+		path: '/',
 	},
 
 	{

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Navbar from './components/navigation/Navbar';
 import GlobalStyles from './style/GlobalStyles';
@@ -14,7 +14,9 @@ function App() {
 				<Container>
 					<Header />
 					<MainContent>
-						<Calls />
+						<Routes>
+							<Route path="/" element={<Calls />} />
+						</Routes>
 					</MainContent>
 					<Navbar />
 				</Container>
