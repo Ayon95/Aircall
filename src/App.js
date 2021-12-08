@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Navbar from './components/navigation/Navbar';
 import GlobalStyles from './style/GlobalStyles';
 import Header from './components/Header';
+import Calls from './components/calls/Calls';
+import stylesConfig from './style/stylesConfig';
 
 function App() {
 	return (
@@ -11,7 +13,9 @@ function App() {
 			<div className="App">
 				<Container>
 					<Header />
-					<MainContent>content here</MainContent>
+					<MainContent>
+						<Calls />
+					</MainContent>
 					<Navbar />
 				</Container>
 			</div>
@@ -36,4 +40,5 @@ const Container = styled.div`
 
 const MainContent = styled.main`
 	flex-grow: 1;
+	padding: ${stylesConfig.basePadding};
 `;

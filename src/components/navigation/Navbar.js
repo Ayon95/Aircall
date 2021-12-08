@@ -47,7 +47,7 @@ function Navbar() {
 export default Navbar;
 
 const Nav = styled.nav`
-	padding: 2rem;
+	padding: ${stylesConfig.basePadding};
 	background-color: ${stylesConfig.colorLightGrey};
 `;
 

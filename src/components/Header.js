@@ -52,7 +52,7 @@ export default Header;
 
 const HeaderComponent = styled.header`
 	border-bottom: solid ${stylesConfig.colorLightGrey};
-	padding: 2rem;
+	padding: ${stylesConfig.basePadding};
 	svg {
 		display: block;
 		width: 100%;
