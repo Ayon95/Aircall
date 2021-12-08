@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
+import Navbar from './components/navigation/Navbar';
 import GlobalStyles from './style/GlobalStyles';
+import Header from './components/Header';
 
 function App() {
 	return (
@@ -8,7 +10,9 @@ function App() {
 			<GlobalStyles />
 			<div className="App">
 				<Container>
-					<h1>Aircall</h1>
+					<Header />
+					<MainContent>content here</MainContent>
+					<Navbar />
 				</Container>
 			</div>
 		</Router>
@@ -23,7 +27,13 @@ const Container = styled.div`
 	max-width: 38rem;
 	margin: 0 auto;
 	background-color: #fff;
-	border-radius: 4px;
+	border-radius: 5px;
+
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 `;
 
-const MainContent = styled.main``;
+const MainContent = styled.main`
+	flex-grow: 1;
+`;

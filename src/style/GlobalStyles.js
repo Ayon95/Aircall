@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import stylesConfig from './stylesConfig';
 
 const GlobalStyles = createGlobalStyle`
     *,
@@ -23,6 +24,16 @@ const GlobalStyles = createGlobalStyle`
     .App {
         padding: 2rem;
 	    height: 100vh;
+    }
+
+    a {
+        text-decoration: none;
+        color: #525252;
+        font-weight: 600;
+    }
+
+    .active-link {
+        color: ${stylesConfig.colorPrimary};
     }
 `;
 
