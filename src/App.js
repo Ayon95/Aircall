@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Navbar from './components/navigation/Navbar';
 import GlobalStyles from './style/GlobalStyles';
@@ -15,7 +15,9 @@ function App() {
 					<Header />
 					<MainContent>
 						<Routes>
-							<Route path="/" element={<Calls />} />
+							{/* for redirecting from '/' to '/calls/all' page which is basically the home page */}
+							<Route path="/" element={<Navigate replace to="/calls/all" />} />
+							<Route path="/calls/*" element={<Calls />} />
 						</Routes>
 					</MainContent>
 					<Navbar />

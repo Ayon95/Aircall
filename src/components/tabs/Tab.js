@@ -7,11 +7,7 @@ function Tab({ tab }) {
 	const location = useLocation();
 	return (
 		<li>
-			<LinkComponent
-				to={tab.path}
-				// className={tab.path === location.hash ? 'active-tab' : ''}
-				$isActive={tab.path === location.hash}
-			>
+			<LinkComponent to={tab.path} $isActive={location.pathname === `${tab.basePath}/${tab.path}`}>
 				{tab.text}
 			</LinkComponent>
 		</li>

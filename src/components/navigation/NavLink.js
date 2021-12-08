@@ -7,7 +7,10 @@ function NavLink({ link }) {
 	const location = useLocation();
 	return (
 		<ListItem>
-			<LinkComponent to={path} className={path === location.pathname ? 'active-link' : ''}>
+			<LinkComponent
+				to={path}
+				className={location.pathname.includes(text.toLowerCase()) ? 'active-link' : ''}
+			>
 				<Icon />
 				<p>{text}</p>
 			</LinkComponent>
