@@ -4,7 +4,7 @@ import { MdArchive, MdUnarchive } from 'react-icons/md';
 import styled, { css } from 'styled-components';
 import stylesConfig from '../../style/stylesConfig';
 
-function CallDetails({ call }) {
+function CallDetails({ call, changeArchivedStatus }) {
 	return (
 		<ListItem>
 			<CallDate>
@@ -28,8 +28,12 @@ function CallDetails({ call }) {
 				</Callee>
 			</div>
 			<Time>12:34 PM</Time>
-			<ArchiveStatusButton type="button" title={call.isArchived ? 'Unarchive' : 'Archive'}>
-				{call.isArchived ? <MdUnarchive /> : <MdArchive />}
+			<ArchiveStatusButton
+				type="button"
+				onClick={() => changeArchivedStatus(call.id, call.is_archived)}
+				title={call.is_archived ? 'Unarchive' : 'Archive'}
+			>
+				{call.is_archived ? <MdUnarchive /> : <MdArchive />}
 			</ArchiveStatusButton>
 		</ListItem>
 	);
