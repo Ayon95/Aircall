@@ -40,6 +40,18 @@ const GlobalStyles = createGlobalStyle`
     .active-link {
         color: ${stylesConfig.colorPrimary};
     }
+
+    
+    /* Animations */
+    @keyframes rotateSpinner {
+        0% {
+            transform: rotate(0);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 `;
 
 export default GlobalStyles;

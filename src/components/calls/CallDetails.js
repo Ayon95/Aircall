@@ -24,7 +24,7 @@ function CallDetails({ call, changeArchivedStatus }) {
 			<div>
 				<Caller>{call.from}</Caller>
 				<Callee>
-					To <span>{call.to}</span>
+					To <span>{call.to ? call.to : 'Unknown'}</span>
 				</Callee>
 			</div>
 			<Time>12:34 PM</Time>
@@ -94,9 +94,10 @@ const ArchiveStatusButton = styled.button`
 	display: flex;
 	align-items: center;
 	cursor: pointer;
-	transition: color 0.3s;
+	transition: color 0.3s, transform 0.3s;
 
 	&:hover {
 		color: ${stylesConfig.colorPrimary};
+		transform: scale(1.15);
 	}
 `;

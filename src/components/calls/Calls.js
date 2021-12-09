@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import LoadingSpinner from '../generic/LoadingSpinner';
+import Message from '../generic/Message';
 import Tabs from '../tabs/Tabs';
 import useFetch from './../../hooks/useFetch';
 import AllCalls from './AllCalls';
@@ -56,6 +58,8 @@ function Calls() {
 	return (
 		<div>
 			<Tabs tabs={tabs} />
+			{isLoading && <LoadingSpinner />}
+			{!isLoading && error && <Message type="error" text={error} />}
 			<Routes>
 				<Route
 					path="all"
