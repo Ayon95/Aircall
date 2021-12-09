@@ -3,13 +3,16 @@ import styled from 'styled-components';
 import stylesConfig from '../../style/stylesConfig';
 import Tab from './Tab';
 
-function Tabs({ tabs }) {
+function Tabs({ tabs, archivedCallsCount }) {
 	return (
 		<Container>
 			<ul>
-				{tabs.map(tab => (
-					<Tab key={tab.text} tab={tab} />
-				))}
+				{tabs.map(tab => {
+					if (tab.text.toLowerCase().includes('archived')) {
+						return <Tab key={tab.text} tab={tab} archivedCallsCount={archivedCallsCount} />;
+					}
+					return <Tab key={tab.text} tab={tab} />;
+				})}
 			</ul>
 		</Container>
 	);

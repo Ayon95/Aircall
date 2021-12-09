@@ -31,6 +31,7 @@ const tabs = [
 function Calls() {
 	const { data, isLoading, error } = useFetch('https://aircall-job.herokuapp.com/activities');
 	const [calls, setCalls] = useState(data);
+	const archivedCallsCount = calls?.filter(call => call.is_archived).length;
 
 	// initially data will be null, so we have to update the value of calls when data is no longer null
 	useEffect(() => setCalls(data), [data]);
@@ -57,7 +58,7 @@ function Calls() {
 	}
 	return (
 		<div>
-			<Tabs tabs={tabs} />
+			<Tabs tabs={tabs} archivedCallsCount={archivedCallsCount} />
 			{isLoading && <LoadingSpinner />}
 			{!isLoading && error && <Message type="error" text={error} />}
 			<Routes>

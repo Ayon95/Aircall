@@ -7,7 +7,7 @@ function NavLink({ link }) {
 	const { text, path, icon: Icon } = link;
 	const location = useLocation();
 	return (
-		<ListItem>
+		<li>
 			<LinkComponent
 				to={path}
 				className={location.pathname.includes(text.toLowerCase()) ? 'active-link' : ''}
@@ -15,13 +15,12 @@ function NavLink({ link }) {
 				<Icon />
 				<p>{text}</p>
 			</LinkComponent>
-		</ListItem>
+		</li>
 	);
 }
 
 export default NavLink;
 
-const ListItem = styled.li``;
 const LinkComponent = styled(Link)`
 	display: flex;
 	flex-direction: column;

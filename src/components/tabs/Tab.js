@@ -2,19 +2,25 @@ import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import stylesConfig from '../../style/stylesConfig';
+import NotificationBadge from '../generic/NotificationBadge';
 
-function Tab({ tab }) {
+function Tab({ tab, archivedCallsCount }) {
 	const location = useLocation();
 	return (
-		<li>
+		<ListItem>
+			{archivedCallsCount > 0 && <NotificationBadge content={archivedCallsCount} />}
 			<LinkComponent to={tab.path} $isActive={location.pathname === `${tab.basePath}/${tab.path}`}>
 				{tab.text}
 			</LinkComponent>
-		</li>
+		</ListItem>
 	);
 }
 
 export default Tab;
+
+const ListItem = styled.li`
+	position: relative;
+`;
 
 const LinkComponent = styled(NavLink)`
 	padding-bottom: 1rem;
