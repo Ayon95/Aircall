@@ -5,6 +5,9 @@ import GlobalStyles from './style/GlobalStyles';
 import Header from './components/Header';
 import Calls from './components/calls/Calls';
 import stylesConfig from './style/stylesConfig';
+import Contacts from './components/contacts/Contacts';
+import Keypad from './components/keypad/Keypad';
+import Voicemail from './components/voicemail/Voicemail';
 
 function App() {
 	return (
@@ -18,6 +21,9 @@ function App() {
 							{/* for redirecting from '/' to '/calls/all' page which is basically the home page */}
 							<Route path="/" element={<Navigate replace to="/calls/all" />} />
 							<Route path="/calls/*" element={<Calls />} />
+							<Route path="/contacts" element={<Contacts />} />
+							<Route path="/keypad" element={<Keypad />} />
+							<Route path="/voicemail" element={<Voicemail />} />
 						</Routes>
 					</MainContent>
 					<Navbar />
