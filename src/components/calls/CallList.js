@@ -18,7 +18,7 @@ const List = styled.ul`
 
 	/* scrollbar styles that will work on Chrome, Edge, and Safari */
 	&::-webkit-scrollbar {
-		width: 5px;
+		width: 6px;
 	}
 
 	&::-webkit-scrollbar-track {
@@ -27,5 +27,9 @@ const List = styled.ul`
 	&::-webkit-scrollbar-thumb {
 		background-color: ${stylesConfig.colorLightGrey};
 		border-radius: 10rem;
+
+		&:hover {
+			background-color: ${stylesConfig.colorMediumGrey};
+		}
 	}
 `;

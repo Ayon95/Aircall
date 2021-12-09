@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import stylesConfig from '../style/stylesConfig';
 
-// #2AC420 circle
-
 const Header = () => {
 	return (
 		<HeaderComponent>

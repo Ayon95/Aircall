@@ -27,7 +27,7 @@ function CallDetails({ call, changeArchivedStatus }) {
 					To <span>{call.to ? call.to : 'Unknown'}</span>
 				</Callee>
 			</div>
-			<Time>12:34 PM</Time>
+			<Time>{new Date(call.created_at).toLocaleTimeString('en-us', { timeStyle: 'short' })}</Time>
 			<ArchiveStatusButton
 				type="button"
 				onClick={() => changeArchivedStatus(call.id, call.is_archived)}

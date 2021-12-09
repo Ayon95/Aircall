@@ -37,7 +37,7 @@ function Calls() {
 	useEffect(() => setCalls(data), [data]);
 
 	async function changeArchivedStatus(callId, callIsArchived) {
-		const updatedCallsList = calls?.map(call => {
+		const updatedCallsList = calls.map(call => {
 			if (call.id === callId) return { ...call, is_archived: !callIsArchived };
 			return call;
 		});
