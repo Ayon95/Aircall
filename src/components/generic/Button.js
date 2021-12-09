@@ -2,11 +2,11 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import stylesConfig from './../../style/stylesConfig';
 
-function Button({ type, text }) {
+function Button({ type, text, handleClick }) {
 	return type === 'filled' ? (
-		<FilledButton>{text}</FilledButton>
+		<FilledButton onClick={handleClick}>{text}</FilledButton>
 	) : (
-		<OutlinedButton>{text}</OutlinedButton>
+		<OutlinedButton onClick={handleClick}>{text}</OutlinedButton>
 	);
 }
 

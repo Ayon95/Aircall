@@ -8,7 +8,11 @@ function Voicemail() {
 		<div>
 			<PageTitle text="Voicemail" />
 			<Section>
-				<Button type="outlined" text="Call voicemail" />
+				<Button
+					type="outlined"
+					text="Call voicemail"
+					handleClick={() => console.log('button clicked!')}
+				/>
 			</Section>
 		</div>
 	);

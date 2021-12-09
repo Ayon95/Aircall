@@ -8,6 +8,7 @@ import stylesConfig from './style/stylesConfig';
 import Contacts from './components/contacts/Contacts';
 import Keypad from './components/keypad/Keypad';
 import Voicemail from './components/voicemail/Voicemail';
+import NotFound from './components/NotFound';
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 							<Route path="/contacts" element={<Contacts />} />
 							<Route path="/keypad" element={<Keypad />} />
 							<Route path="/voicemail" element={<Voicemail />} />
+							<Route path="*" element={<NotFound />} />
 						</Routes>
 					</MainContent>
 					<Navbar />
