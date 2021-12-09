@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Tabs from '../tabs/Tabs';
 import useFetch from './../../hooks/useFetch';
 import AllCalls from './AllCalls';
+import IncomingCalls from './IncomingCalls';
 
 const tabs = [
 	{
@@ -30,7 +31,8 @@ function Calls() {
 		<div>
 			<Tabs tabs={tabs} />
 			<Routes>
-				<Route path="all" element={<AllCalls calls={data} />} />
+				<Route path="all" element={data && <AllCalls calls={data} />} />
+				<Route path="incoming" element={data && <IncomingCalls calls={data} />} />
 			</Routes>
 		</div>
 	);
